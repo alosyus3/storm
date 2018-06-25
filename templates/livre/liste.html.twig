@@ -1,0 +1,29 @@
+{%  extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button>{% trans %}Send{% endtrans %}</button>
+    {{ form_end(form) }}
+    <table class="table-striped">
+        <thead>
+        <tr>
+            <th>{% trans %}Title{% endtrans %}</th>
+            <th>Résumé</th>
+            <th>Auteur</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td>{{livre.Titre}}</td>
+                <td>{{livre.Resume}}</td>
+                <td>{{livre.Auteur}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
